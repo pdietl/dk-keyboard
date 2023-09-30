@@ -1,0 +1,24 @@
+#cloud-config
+
+package_update: true
+packages:
+ - atool
+ - build-essential
+ - cmake
+ - curl
+ - picocom
+ - python3-pip
+ - python3-venv
+ - ripgrep
+ - tmux
+ - tree
+ - vim
+
+write_files:
+  - path: /home/ubuntu/.tmux.conf
+    owner: ubuntu
+    defer: true
+    encoding: gzip+base64
+    content: __TMUX_GZ_B64_CONTENT__
+
+# vim: filetype=yaml
